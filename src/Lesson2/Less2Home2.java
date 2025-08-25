@@ -10,7 +10,7 @@ public class Less2Home2 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите температуру на улице:");
         if (scanner.hasNextDouble()) {
-            Double temp = scanner.nextDouble();
+            double temp = scanner.nextDouble();  //Fix double
             if (temp > -5) {
                 System.out.println("Warm");
             } else if (temp <= -20) {
