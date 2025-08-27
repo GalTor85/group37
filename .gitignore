@@ -27,3 +27,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/src/Lesson1/MyNewClass.java
+/src/Lesson2/MyClass.java
+/src/Lesson4/ArrayMain.java
+/src/Lesson4/MathMain.java
+/.idea/
