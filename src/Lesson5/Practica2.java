@@ -1,6 +1,5 @@
-package Liesson5;
+package Lesson5;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Practica2 {

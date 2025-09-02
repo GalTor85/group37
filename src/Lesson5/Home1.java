@@ -1,4 +1,4 @@
-package Liesson5;
+package Lesson5;
 
 import java.util.Arrays;
 import java.util.Scanner;
