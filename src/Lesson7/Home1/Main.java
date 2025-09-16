@@ -22,8 +22,8 @@ public class Main {
 
         Therapist t = new Therapist();  //инициализация терапевта
         Surgeon s = new Surgeon();      //инициализация хирурга
-        Dentist d = new Dentist();      //инициализация дантиста
-
+        Dentist d = new Dentist();
+        Dentist  c = new Dentist();//инициализация дантиста
         System.out.println("Сгенерирован план лечения код " + p.getTreatmentPlan()+".");
         System.out.println(t.firstAppeal(p, d));       //приём у терапевта если врача нет в параметрах, назначается терапевт
         //System.out.println(t.firstAppeal(p, s, d));

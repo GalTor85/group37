@@ -1,7 +1,7 @@
 package Lesson7.HomeStar;
 
 public class Apple {
-  private String color;
+  private String color="";
 
     public Apple(String color) {
         this.color = color;

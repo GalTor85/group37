@@ -35,7 +35,10 @@ public class Bankomat {
         String output = "";
         Scanner sc = new Scanner(System.in);
         System.out.print("Внесение купюр. Введите количество купюр номиналом 20 :");
-        int amBanknote20 = sc.hasNextInt() ? sc.nextInt() : -100;                     //проверка на Int
+         int amBanknote20;
+        if (sc.hasNextInt())  { amBanknote20 = sc.nextInt(); }                         //проверка на Int
+        else { amBanknote20 = -100; }
+        //int amBanknote20 = sc.hasNextInt() ? sc.nextInt() : -100;                     //проверка на Int
         if (amBanknote20 != -100) System.out.print("Введите количество купюр номиналом 50 :");
         int amBanknote50 = sc.hasNextInt() ? sc.nextInt() : -100;                     //проверка на Int
         if (amBanknote50 != -100) System.out.print("Введите количество купюр номиналом 100 :");
