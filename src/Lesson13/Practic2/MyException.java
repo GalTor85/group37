@@ -1,12 +1,12 @@
 package Lesson13.Practic2;
 
-public class myException extends Exception {
+public class MyException extends Exception {
     @Override
     public String toString() {
         return getMessage();
     }
 
-    public myException(int age, String messege) {
+    public MyException(int age, String messege) {
         super("Ошибка "+age+messege);
     }
 }

@@ -17,25 +17,27 @@ public class Main {
      * --------------------------------------------------------------------
      * Задача *:
      * Написать try/catch/finally, в котором finally вызван не будет.
-     *      *
+     * *
      */
-    public static void main(String[] args) throws WrongLoginException, WrongPasswordException {
-        String login="sd";
-        String password="dfsddf1";
-        String confirmPassword="dfsddf1";
-        System.out.println(PasswordChek.engine(login, password, confirmPassword));
-                try {
-                   login="sd";
-                    password="dfsddf1";
-                    confirmPassword="dfsddf";
-                    System.out.println(PasswordChek.engine(login, password, confirmPassword));
-                    System.exit(0);  //ПРЕРЫВАНИЕ!!!
-                } catch (WrongLoginException|WrongPasswordException e) {
-                    System.out.println(e.getMessage());
-                    System.exit(1); //В ЛЮБОМ СЛУЧАЕ прерывание!!!
-                }
-                finally {
-                    System.out.println("Это не будет исполнено");
-                }
+
+    public static void main(String[] args) {
+
+        String login = "sd";
+        String password = "dfsddf1";
+        String confirmPassword = "dfsddf1";
+
+        try  {
+            System.out.println(PasswordChek.engine(login, password, confirmPassword));
+            login = "sd";
+            password = "dfsddf1";
+            confirmPassword = "dfsddf";
+            System.out.println(PasswordChek.engine(login, password, confirmPassword));
+            System.exit(0);  //ПРЕРЫВАНИЕ!!!
+        } catch (WrongLoginException | WrongPasswordException e) {
+            System.out.println(e.getMessage());
+            System.exit(1); //В ЛЮБОМ СЛУЧАЕ прерывание!!!
+        } finally {
+            System.out.println("Это не будет исполнено");
+        }
     }
 }

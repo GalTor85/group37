@@ -8,15 +8,17 @@ public class Main {
      * после 18 лет в методе main.
      */
     public static void main(String[] args) {
-    Person person = new Person();
-    person.setName("John");
-    try {
-        person.setAge(10);
-        System.out.println(person);
-        person.setAge(20);
-        System.out.println(person);
+        Person person = new Person();
+        person.setName("John");
+        try {
+            person.setAge(10);
+            System.out.println(person);
+            person.setAge(20);
+            System.out.println(person);
 
-    } catch (Exception e) {}
+        } catch (Exception e) {
+            System.out.println(e.getMessage()); //Fix
+        }
 
 
     }

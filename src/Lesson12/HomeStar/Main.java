@@ -1,4 +1,5 @@
 package Lesson12.HomeStar;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,10 +22,7 @@ public class Main {
 
         Pattern pat = Pattern.compile("([a-z]{2,}@[a-z]{2,}\\.[a-z]{2,})|(\\d{4}-\\d{4}-\\d{2})|" +
                 "(\\+\\(\\d{2}\\)\\d{7})");
-        //  String[] bd = new String[1];
         String temp = "";
-        String[] bd = {};
-        int i = 0;
         Matcher matcher = pat.matcher(text);
         while (matcher.find()) {
             if (matcher.group(1) != null) {
