@@ -21,14 +21,14 @@ public class Main {
         students.add(new Student("Сергей", "ВМ01", 2, new int[]{3, 4, 4, 3, 3,}));
         students.add(new Student("Сергей", "ВМ01", 2, new int[]{3, 4, 4, 5, 3,}));
         System.out.println(students);
-        Main main = new Main();
-        main.deleteStudent(students);
+
+        deleteStudent(students);
         System.out.println(students);
-        main.printStudents(students, 2);
+        printStudents(students, 2);
 
     }
 
-    public void deleteStudent(ArrayList<Student> student) {
+    static public void deleteStudent(ArrayList<Student> student) {
         for (int index = 0; index < student.size(); index++) {
             Double sum = 0.0;
             for (int i = 0; i < student.get(index).getBall().length; i++) {
@@ -43,7 +43,7 @@ public class Main {
         }
     }
 
-    void printStudents(ArrayList<Student> students, int course) {
+    static void printStudents(ArrayList<Student> students, int course) {
         for (Student student : students) {
             if (student.getCourse() == course) {
                 System.out.println(student.getName());

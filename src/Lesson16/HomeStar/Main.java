@@ -12,11 +12,11 @@ public class Main {
         String string2 = "{([)]}";
         String string3 = "{dsdf([sf]s/sw)}afs";
         String string4 = "{([(])}";
-        Main main = new Main();
-        System.out.println(main.balance(string1));
-        System.out.println(main.balance(string2));
-        System.out.println(main.balance(string3));
-        System.out.println(main.balance(string4));
+
+        System.out.println(balance(string1));
+        System.out.println(balance(string2));
+        System.out.println(balance(string3));
+        System.out.println(balance(string4));
     }
 
     //метод удаление лишних символов
@@ -26,7 +26,7 @@ public class Main {
     }
 
     //метод проверки сбалансированности скобок
-    Boolean balance(String string) {
+    static Boolean balance(String string) {
         Map<Character, Character> pattern = new HashMap<>() {{  //паттерн для сравнения
             put('(', ')');
             put('[', ']');
