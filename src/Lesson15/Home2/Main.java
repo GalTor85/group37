@@ -18,7 +18,5 @@ public class Main {
         System.out.println(animals.getNames());
         animals.delNames();
         System.out.println(animals.getNames());
-
-
     }
 }

@@ -51,5 +51,4 @@ public class Student {
         this.course = course;
         this.ball = ball;
     }
-
 }

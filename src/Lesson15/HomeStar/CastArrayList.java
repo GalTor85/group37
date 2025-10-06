@@ -1,11 +1,10 @@
 package Lesson15.HomeStar;
 
-
 import java.util.Arrays;
 
-public class CastArrayList<e> {
+public class CastArrayList<E> {
     //e - класс массива
-    private e[] array;
+    private E[] array;
 
     //Переопределение ToString
     @Override
@@ -31,7 +30,7 @@ public class CastArrayList<e> {
     //Конструктор - создает массив по умолчанию =10
     public CastArrayList() {
         if (array == null) {
-            array = (e[]) new Object[10];
+            array = (E[]) new Object[10];
         }
         this.array = array;
     }
@@ -48,7 +47,7 @@ public class CastArrayList<e> {
     }
 
     //метод добавляет элемент в конец
-    void add(e e) {
+    void add(E e) {
         for (int i = 0; i < array.length; i++) {
             if (null == array[i]) {
                 array[i] = e;
@@ -74,7 +73,7 @@ public class CastArrayList<e> {
     }
 
     //метод возвращает элемент по индексу
-    public e get(int index) {
+    public E get(int index) {
         if ((index != 0) && (index <= length()) && (null != array[index - 1])) {
             return array[index - 1];
         }
@@ -82,7 +81,7 @@ public class CastArrayList<e> {
     }
 
     //метод заменяет элемент по индексу
-    public boolean replace(e e, int index) {
+    public boolean replace(E e, int index) {
         if ((e != null) && (index != 0) && (index <= length()) && (null != array[index - 1])) {
             array[index - 1] = e;
             return true;
@@ -91,7 +90,7 @@ public class CastArrayList<e> {
     }
 
     //метод добавляет элемент по индексу
-    boolean add(e e, int index) {
+    boolean add(E e, int index) {
         if (length() == array.length && index != 1) {
             array = Arrays.copyOf(array, array.length * 2);
         }
@@ -108,7 +107,7 @@ public class CastArrayList<e> {
     }
 
     //метод добавляет в начало
-    void addFirst(e e) {
+    void addFirst(E e) {
         if ((array.length) == length()) {
             array = Arrays.copyOf(array, array.length * 2);
         }
@@ -118,8 +117,6 @@ public class CastArrayList<e> {
         }
         array[0] = e;
     }
-
-
 }
 
 
