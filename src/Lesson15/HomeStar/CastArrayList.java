@@ -47,7 +47,7 @@ public class CastArrayList<E> {
     }
 
     //метод добавляет элемент в конец
-    void add(E e) {
+    public void add(E e) {
         for (int i = 0; i < array.length; i++) {
             if (null == array[i]) {
                 array[i] = e;
@@ -59,7 +59,7 @@ public class CastArrayList<E> {
     }
 
     //метод удаления элемента по индексу
-    boolean remove(int index) {
+    public boolean remove(int index) {
         if ((index != 0) && (index <= length()) && (null != array[index - 1] && null != get(index))) {
             int lens = length();
             for (int i = index; i < length(); i++) {
@@ -90,7 +90,7 @@ public class CastArrayList<E> {
     }
 
     //метод добавляет элемент по индексу
-    boolean add(E e, int index) {
+    public boolean add(E e, int index) {
         if (length() == array.length && index != 1) {
             array = Arrays.copyOf(array, array.length * 2);
         }
@@ -107,7 +107,7 @@ public class CastArrayList<E> {
     }
 
     //метод добавляет в начало
-    void addFirst(E e) {
+    public void addFirst(E e) {
         if ((array.length) == length()) {
             array = Arrays.copyOf(array, array.length * 2);
         }
