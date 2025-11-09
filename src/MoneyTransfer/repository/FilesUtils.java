@@ -13,9 +13,8 @@ public class FilesUtils implements InitConst {
     public static HashMap<String, String> fileSearch(String path) {
         Logger.start("Начало поиска файлов по маске");
         HashMap<String, String> output = new HashMap<>();
-        String inputPathAbs = path;
         FileFilter fileFilter = file -> file.getName().endsWith(filesMask);//создание фильтра
-        File file = new File(inputPathAbs);
+        File file = new File(path);
         //Перебор массива файлов в директории соответствующих фильтру
         Arrays.stream(file.listFiles(fileFilter)).iterator().forEachRemaining(out -> {
             FileReader fos = null;
@@ -38,7 +37,7 @@ public class FilesUtils implements InitConst {
             }
             try {
                 fos.close();
-                Logger.start(out.toString() + " файл найден и прочитан");
+                Logger.start(out + " файл найден и прочитан");
             } catch (IOException e) {
                 Logger.start(RuntimeException.class.getName() + ": " + e);
                 throw new RuntimeException(e);
@@ -82,7 +81,7 @@ public class FilesUtils implements InitConst {
             }
             input.append((char) i);
         }
-        Logger.start(reportPathFile.toString() + " Файл найден и прочитан");
+        Logger.start(reportPathFile + " Файл найден и прочитан");
         try {
             fos.close();
         } catch (IOException e) {

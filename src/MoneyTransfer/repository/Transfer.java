@@ -1,7 +1,5 @@
 package MoneyTransfer.repository;
 
-import MoneyTransfer.exception.SqlErrorHandler;
-import MoneyTransfer.model.InitConst;
 import MoneyTransfer.model.TableUtils;
 
 import java.math.BigDecimal;
@@ -12,28 +10,8 @@ import java.util.List;
 //Класс работы с переводами
 public class Transfer {
 
-    public static void inNewAccountString(HashMap<String, String> listOfAccountsCash) {
-        listOfAccountsCash.forEach((k, v) -> {
-            try {
-                TableUtils exchangeDB = new TableUtils();
-                exchangeDB.addValue(Long.parseLong(k), new BigDecimal(listOfAccountsCash.get(k)));
-            } catch (SQLException | ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-        });
-    }
 
-    public static void inNewAccount(HashMap<Long, BigDecimal> listOfAccountsCash) {
-        listOfAccountsCash.forEach((k, v) -> {
-            try {
-                TableUtils exchangeDB = new TableUtils();
-                exchangeDB.addValue(k, v);
-            } catch (SQLException | ClassNotFoundException e) {
-                Logger.start(e.getMessage());
-                throw new RuntimeException(e);
-            }
-        });
-    }
+
 // Метод создания(открытия) счетов из HashMap (имя файла->счет->суммы) -
 // в программе загружается только одна сумма!!!
 // если в начальном файле будет несколько сумм привязанных к одному счету
@@ -45,7 +23,6 @@ public class Transfer {
         if (listOfAccountsCash == null || listOfAccountsCash.isEmpty()) {
             Logger.start(" Данные счетов не обнаружены ");
             return false;
-
         }
         //Переборка входящей HashMap
         listOfAccountsCash.forEach((file, v) -> {

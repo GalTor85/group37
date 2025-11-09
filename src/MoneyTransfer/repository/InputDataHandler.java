@@ -123,7 +123,7 @@ public class InputDataHandler implements InitConst {
         try {
             // Можно парсить как LocalDate или LocalDateTime в зависимости от задачи
             LocalDate date = LocalDate.parse(input, formatter);
-            return date != null;
+            return true;
         } catch (DateTimeParseException e) {
             return false;
         }

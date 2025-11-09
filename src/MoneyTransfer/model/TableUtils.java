@@ -49,11 +49,11 @@ public class TableUtils implements TableOperations, InitConst {
 
     //Здесь должен быть метод создания ключей для связи таблиц
     @Override
-    public void createForeignKeys() throws SQLException {
+    public void createForeignKeys() {
     }
 
     @Override
-    public void createExtraConstraints() throws SQLException {
+    public void createExtraConstraints() {
 
     }
 

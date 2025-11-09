@@ -32,7 +32,6 @@ import MoneyTransfer.repository.InputDataHandler;
 
 import MoneyTransfer.repository.*;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +53,7 @@ public class MoneyTransfer {
                 switch (line) {
                     case keyOne -> {
                         HashMap<String, String> out;
-                        HashMap<String, HashMap<String, List<String>>> openAccounts = new HashMap<>();
+                        HashMap<String, HashMap<String, List<String>>> openAccounts;
                         //Поиск файлов
                         out = FilesUtils.fileSearch();
                         //Обработка данных
@@ -129,7 +128,7 @@ public class MoneyTransfer {
                         if (sc.hasNextLine()) {
                             if (keyOne.equals(sc.nextLine())) {
                                 HashMap<String, String> out;
-                                HashMap<String, HashMap<String, List<String>>> openAccounts = new HashMap<>();
+                                HashMap<String, HashMap<String, List<String>>> openAccounts;
                                 //Поиск файлов
                                 out = FilesUtils.fileSearch(inputPathFirstLoadTable);
                                 //Обработка данных

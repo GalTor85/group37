@@ -20,9 +20,9 @@ public interface TableOperations {
 
     void updateCashByAccountNum(long accountNum, BigDecimal newCash) throws SQLException;
 
-    public BigDecimal readValue(Long key) throws SQLException;
+    BigDecimal readValue(Long key) throws SQLException;
 
-    public boolean isAccount(Long accountNum) throws SQLException;
+    boolean isAccount(Long accountNum) throws SQLException;
 
     void deleteByAccountNumIfCashZero(long accountNum) throws SQLException;
 

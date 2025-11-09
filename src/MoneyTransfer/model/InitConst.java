@@ -1,11 +1,6 @@
 package MoneyTransfer.model;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.time.format.DateTimeFormatter;
-import java.util.Locale;
-import java.util.Scanner;
-import java.util.Stack;
 
 public interface InitConst {
     String keyOne = "1";
@@ -24,7 +19,6 @@ public interface InitConst {
     DateTimeFormatter logDTFormat = DateTimeFormatter.ofPattern("dd/MM/yy_HH:mm:ss");
     DateTimeFormatter repDateFormat = DateTimeFormatter.ofPattern("dd/MM/yy");
     String patternDate = "\\b\\d{2}/\\d{2}/\\d{2}";
-    String patternDateTime = "\\b(\\d{2}/\\d{2}/\\d{2})_(\\d{2}:\\d{2}:\\d{2})\\b";
     String inputPathAbs = dir + inputPath;
     String archivePathAbs = dir + archivePath;
     String patternMoneyAccountNumber = ("\\d{5}-\\d{5}");
@@ -34,8 +28,6 @@ public interface InitConst {
             patternMoneyAccountNumber +"\\s"+"\\-?\\d+)|" +
             "("+ patternMoneyAccountNumber +"\\s"+ patternMoneyAccountNumber +
             "\\s\\-?\\d+.\\d{2})");
-    DecimalFormat bill = new DecimalFormat("00000");
-    NumberFormat currencyInstance = NumberFormat.getCurrencyInstance(new Locale("ru", "RU"));;
     String tableName = "collectionMoneyAccounts";
     String DB_Driver = "org.h2.Driver";
     String bdPathFile = dir + "\\bd\\bd";
