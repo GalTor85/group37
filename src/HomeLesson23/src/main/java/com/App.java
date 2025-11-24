@@ -10,17 +10,32 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
+
+import static com.dom.DomParser.parseDom;
+import static com.sax.SaxParser.parseSax;
 
 
 /**
  *Написать программу для парсинга xml документа. Необходимо распарсить xml документ и
  * содержимое тегов line записать в другой документ. Название файла для записи должно
  * состоять из значений тегов и имеет вид: <firstName>_<lastName>_<title>.txt
+ * Дополнительно реализовать следующий функционал: если с консоли введено значение 1
+ * - распарсить документ с помощью SAX, если с консоли введено значение 2 - распарсить
+ * документ с помощью DOM
  */
 public class App {
     public static void main(String[] args) {
-
-        fileWriter(parseSax("file.xml"));
+        System.out.println("Введите 1 для парсинга с SAX, 2 для парсинга с DOM");
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+        if (choice == 1) {
+            fileWriter((parseSax("file.xml")));
+        } else if (choice == 2) {
+           fileWriter((parseDom("file.xml")));
+        } else {
+            System.out.println("Некорректный ввод");
+        }
 
     }
 
@@ -43,16 +58,5 @@ public class App {
         }
     }
 
-    static ListOfAuthor parseSax(String pathname) {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        try {
-            SAXParser parser = factory.newSAXParser();
-            SaXHandler handler = new SaXHandler();
-            parser.parse(new File(pathname), handler);
-            return handler.getListOfAuthor();
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+
 }
