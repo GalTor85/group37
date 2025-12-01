@@ -1,0 +1,21 @@
+.tms {
+    color: white;
+    text-align: center;
+    background-color: black;
+    font-size: 40px;
+    font-family: 'Segoe UI', Times, sans-serif;
+    Line-height: 1.1;
+    }
+.brackets {
+    color: yellow;
+    background-color: black;
+    font-size: 45px;
+    font-family: 'Segoe UI', Times, sans-serif;
+    Line-height: 1.1;
+}
+.table {
+    background-color: black;
+    width: 187px;
+    height: 187px;
+    padding: 50px 10px 10px 50px;
+}
