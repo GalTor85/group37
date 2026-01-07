@@ -12,9 +12,10 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 public class Product {
+    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String name;
     private String description;
     private BigDecimal price;
@@ -22,4 +23,12 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
     private Integer stockQuantity;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }
