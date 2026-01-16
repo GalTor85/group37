@@ -13,6 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 public class Order {
+    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,4 +24,12 @@ public class Order {
     private String status;
     @OneToMany(mappedBy = "order")
     private List<OrderItem> items;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

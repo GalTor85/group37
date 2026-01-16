@@ -13,8 +13,17 @@ import org.springframework.data.annotation.Id;
 @Getter
 @Setter
 public class Role {
+    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @Setter
 
 public class OrderItem {
+    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,4 +25,12 @@ public class OrderItem {
     private Product product;
     private Integer quantity;
     private BigDecimal unitPrice;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

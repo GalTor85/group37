@@ -1,5 +1,6 @@
 package ru.galtor85.shop;
 
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,4 +11,6 @@ public class ShopApplication {
         SpringApplication.run(ShopApplication.class, args);
     }
 
-}
+  }
+
+
